@@ -523,7 +523,7 @@ $RESPONSIVENESS
 	position: fixed;
     top: 6%;
     left: 1%;
-	z-index: 999;
+	z-index: 1000;
 	width: 60px;
 	height: 60px;
 	background-color:rgb(129, 80, 80);
