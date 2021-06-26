@@ -1,0 +1,51 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Google Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    />
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="brain/css/style.css" />
+    <title>Quiz App!</title>
+    <link rel="icon" type="image/png" href="brain/img/fav.png" />
+</head>
+<body onload="chkUser()">
+    <header>
+        <input type="checkbox" id="ham-menu">
+        <label for="ham-menu">
+          <div class="hide-des">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </div>
+        
+        </label>
+        <div class="full-page-green"></div>
+        <div class="ham-menu">
+          <ul class="centre-text bold-text">
+            <li><a href="{{path('main')}} ">Js Quiz</a> </li>
+            <li><a href="{{path('symfony')}} ">Symfony Quiz</a> </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        
+          </ul>
+        </div>
+    </header>
+
+    
