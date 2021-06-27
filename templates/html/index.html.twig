@@ -1,52 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SymfonyController!{% endblock %}
-
-
+{% block title %}Hello MainController!{% endblock %}
 
 {% block body %}
 
+<!-- Bootstrap CSS -->
 
-    <!-- The Form -->
-    
-    <div id="theForm">
-        <form class="form" onsubmit="return false;">
-            <i class="material-icons finger-print">https</i>
-            <i class="material-icons warning">warning</i>
-            <i class="material-icons success">done_all</i>
-            <h2
-                id="errH"
-                style="font-weight:bold;font-size:1.7em;margin-bottom: 30px;"
-            ></h2>
-            <h2 id="err"></h2>
-            <div class="form-group mx-sm-3 mb-3 passBox">
-                <label for="pass" class="sr-only">Password</label>
-                <input
-                    type="password"
-                    class="form-control animated"
-                    id="pass"
-                    placeholder="Provided Key"
-                    onkeyup="typing();"
-                    onfocus="resetErr();"
-                    onblur="this.style.borderColor = '#ced4da';"
-                />
-            </div>
-            <button
-                type="submit"
-                disabled="disabled"
-                class="btn btn-primary mb-2"
-                id="submit"
-                onclick="chkPass(this);"
-            >
-                Confirm ton existance
-            </button>
-        </form>
-    </div>
+
 
     <!-- Quiz Starts Here -->
     <section id="theQuiz">
         <form id="quizForm" onsubmit="return false;">
-            <h2>Symfony Quiz:</h2>
+            <h2>HTML Quiz:</h2>
 
             <div id="steps" style="text-align:center;">
                 <!-- Steps will be shown as per questions length -->
@@ -142,7 +107,6 @@
         </div>
         <!-- Result Circle End -->
         <br />
-        <h1>Symfony Quiz</h1>
         <!-- <h1>Congrats! Your Are Passed</h1> -->
         <h2 id="resultFb" style="font-weight: bold;"></h2>
         <h3 id="correctAns"></h3>
@@ -164,7 +128,5 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
-<script src="{{asset('js/symfony.js')}}"></script>
+<script src="{{asset('js/html.js')}}"></script>
 {% endblock %}

@@ -184,11 +184,12 @@ html{
   justify-content: flex-end;
 }
 .wrapper .row section{
-  background: rgb(7, 160, 147);
+  background: rgb(207, 207, 207);
   border-radius: 5px;
   width: calc(50% - 40px);
   padding: 20px;
   position: relative;
+  border: 2px black solid;
 }
 .wrapper .row section::before{
   position: absolute;

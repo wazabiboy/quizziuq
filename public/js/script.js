@@ -1,27 +1,27 @@
-var usernameForm = document.getElementById('username');
-var uname = document.getElementById('uname');
-var login = false; // not logged in
-var theForm = document.getElementById('theForm');
-var theQuiz = document.getElementById('theQuiz');
-var pass = document.getElementById('pass');
-var submitBtn = document.getElementById('submit');
-var err = document.getElementById('err');
-var errH = document.getElementById('errH');
-var i;
+let usernameForm = document.getElementById('username');
+let uname = document.getElementById('uname');
+let login = false; // not logged in
+let theForm = document.getElementById('theForm');
+let theQuiz = document.getElementById('theQuiz');
+let pass = document.getElementById('pass');
+let submitBtn = document.getElementById('submit');
+let err = document.getElementById('err');
+let errH = document.getElementById('errH');
+let i;
 
 /*-----------------------------------*\
 $ On Body Load
 \*-----------------------------------*/
 function chkUser() {
 	// checking from localstorage if user provided name before...
-	var tempName = localStorage.getItem('name'); // get the name
+	let tempName = localStorage.getItem('name'); // get the name
 	if (tempName == null || tempName == '' || tempName == 'undefined') {
 		// if name doesn't exist
 		usernameForm.style.display = 'block'; // ask for name
 		document.getElementById('logoutBtn').style.display = 'none'; // don't show logout button
 	} else {
-		var tempCa = localStorage.getItem('ca'); // get previous correct answer
-		var tempPer = localStorage.getItem('percentage'); // get previous percentage
+		let tempCa = localStorage.getItem('ca'); // get previous correct answer
+		let tempPer = localStorage.getItem('percentage'); // get previous percentage
 		if (
 			(tempPer == null || tempPer == '' || tempPer == 'undefined') &&
 			(tempCa == null || tempCa == '' || tempCa == 'undefined')
@@ -80,7 +80,7 @@ function chkPass(btn) {
 		submitBtn.innerHTML =
 			'<i class="material-icons loading" style="font-size: 1.8em;">cached</i>'; // show loading icon
 
-		login = true; // set login true
+		login = false; // set login true
 
 		setTimeout(function() {
 			// do processing for 2 second - just for good UX
@@ -327,24 +327,24 @@ var RColor;
 function showResult(percentage, ca) {
 	if (percentage == 100) {
 		RColor = 'teal';
-		resultFb.innerHTML = 'Wohoo.. Great, You are pass!';
-		correctAns.innerHTML = 'Correct Answers: ' + ca;
+		resultFb.innerHTML = 'Wohoo.. nous avons un génie';
+		correctAns.innerHTML = 'Nombre de bonnes réponses: ' + ca;
 	} else if (percentage >= 80) {
 		RColor = 'green';
-		resultFb.innerHTML = 'Congrats! You are pass.';
-		correctAns.innerHTML = 'Correct Answers: ' + ca;
+		resultFb.innerHTML = 'presque!!!';
+		correctAns.innerHTML = 'Nombre de bonnes réponses: ' + ca;
 	} else if (percentage >= 65) {
 		RColor = 'blue';
-		resultFb.innerHTML = 'Good Effort, You are pass.';
-		correctAns.innerHTML = 'Correct Answers: ' + ca;
+		resultFb.innerHTML = 'Tu as du pain sur la planche ';
+		correctAns.innerHTML = 'Nombre de bonnes réponses: ' + ca;
 	} else if (percentage >= 50) {
 		RColor = 'orange';
-		resultFb.innerHTML = 'You are passed!';
-		correctAns.innerHTML = 'Correct Answers: ' + ca;
+		resultFb.innerHTML = 'Tu veux le numéro de Bertrand ?';
+		correctAns.innerHTML = 'Nombre de bonnes réponses: ' + ca;
 	} else {
 		RColor = 'red';
-		resultFb.innerHTML = 'Oh No! Your Are Failed... <br> Better Luck Next Time';
-		correctAns.innerHTML = 'Correct Answers: ' + ca;
+		resultFb.innerHTML = 'Gerald ne sera pas content.. ';
+		correctAns.innerHTML = 'Nombre de bonnes réponses: ' + ca;
 	}
 
 	localStorage.setItem('percentage', percentage);

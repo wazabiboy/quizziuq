@@ -1,0 +1,63 @@
+<div class="container box-shadow">
+    <!-- The Form -->
+    <div id="username">
+        <form class="form" onsubmit="return false;">
+            <i class="material-icons">favorite_border
+
+            </i>
+            <h2> Quiz ziuQ  </h2>
+            <div class="form-group mx-sm-3 mb-3 passBox">
+                <label for="pass" class="sr-only">Nick Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="uname"
+                    placeholder="Pseudo"
+                    onfocus="this.style.borderColor = '#007bff'"
+                    onblur="this.style.borderColor = '#ced4da'"
+                />
+            </div>
+            <button
+                type="submit"
+                class="btn btn-primary mb-2"
+                onclick="askPass();"
+            >
+            Je suis prêt(e)
+            </button>
+        </form>
+    </div>
+    <!-- The Form -->
+    
+    <div id="theForm">
+        <form class="form" onsubmit="return false;">
+            <i class="material-icons finger-print">https</i>
+            <i class="material-icons warning">warning</i>
+            <i class="material-icons success">done_all</i>
+            <h2
+                id="errH"
+                style="font-weight:bold;font-size:1.7em;margin-bottom: 30px;"
+            ></h2>
+            <h2 id="err"></h2>
+            <div class="form-group mx-sm-3 mb-3 passBox">
+                <label for="pass" class="sr-only">Password</label>
+                <input
+                    type="password"
+                    class="form-control animated"
+                    id="pass"
+                    placeholder="Provided Key"
+                    onkeyup="typing();"
+                    onfocus="resetErr();"
+                    onblur="this.style.borderColor = '#ced4da';"
+                />
+            </div>
+            <button
+                type="submit"
+                disabled="disabled"
+                class="btn btn-primary mb-2"
+                id="submit"
+                onclick="chkPass(this);"
+            >
+                Confirme ton existance 
+            </button>
+        </form>
+    </div>
