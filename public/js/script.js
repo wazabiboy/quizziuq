@@ -183,31 +183,31 @@ function startQuiz() {
 /*-----------------------------------*\
 $ The Quiz Begins...
 \*-----------------------------------*/
-var queDone = 0; // question asked...
-var userAns = []; // user's answers
-var queDoneArr = []; // storing which question is asked
+let queDone = 0; // question asked...
+let userAns = []; // user's answers
+let queDoneArr = []; // storing which question is asked
 
 // showing steps (dots)...
 steps(totQ.length); // craetes " <span class="step"></span> ";
 function steps(quizLength) {
-	var mainStepDiv = document.getElementById('steps');
-	for (var i = 0; i < quizLength; i++) {
-		var span = document.createElement('span');
+	let mainStepDiv = document.getElementById('steps');
+	for (let i = 0; i < quizLength; i++) {
+		let span = document.createElement('span');
 		span.className = 'step';
 		mainStepDiv.appendChild(span);
 	}
 }
 
-var p = document.getElementById('que'); // the question paragraph
-var O1 = document.getElementById('opt1'); // option 01
-var O2 = document.getElementById('opt2'); // option 02
-var O3 = document.getElementById('opt3'); // option 03
-var O4 = document.getElementById('opt4'); // option 04
+let p = document.getElementById('que'); // the question paragraph
+let O1 = document.getElementById('opt1'); // option 01
+let O2 = document.getElementById('opt2'); // option 02
+let O3 = document.getElementById('opt3'); // option 03
+let O4 = document.getElementById('opt4'); // option 04
 
 // generates and places random questions...
 function randomQ() {
-	var thisAsked = false;
-	var x = Math.floor(Math.random() * totQ.length); // get a random number b/w 0 to total questions
+	let thisAsked = false;
+	let x = Math.floor(Math.random() * totQ.length); // get a random number b/w 0 to total questions
 	while ((totQ[x].asked === 0) == true) {
 		// if this question is not asked
 		thisAsked = true; // this will be true
@@ -244,12 +244,12 @@ function next() {
 	randomQ(); // otherwise, fires next question...
 }
 
-var chkBox = document.getElementsByClassName('custom-control-input'); // targetting all checkboxes...
+let chkBox = document.getElementsByClassName('custom-control-input'); // targetting all checkboxes...
 
 // deals with validation of radio options and adds to the user's answer Array...
 function validateForm() {
-	var valid = false;
-	for (var i = 0; i < chkBox.length; i++) {
+	let valid = false;
+	for (let i = 0; i < chkBox.length; i++) {
 		// checks every radio btn
 		if (chkBox[i].checked) {
 			// if found checked
@@ -273,7 +273,7 @@ function validateForm() {
 }
 
 // enable btn if radio btn is checked
-var nextBtn = document.getElementById('next-button');
+let nextBtn = document.getElementById('next-button');
 function enableBtn(i) {
 	if (i.checked) nextBtn.removeAttribute('disabled');
 	else nextBtn.setAttribute('disabled', 'disabled');
@@ -292,7 +292,7 @@ function topping(n) {
 
 function fixStepIndicator(n) {
 	// removes the "active" class of all steps...
-	var i,
+	let i,
 		x = document.getElementsByClassName('step');
 	for (i = 0; i < x.length; i++) {
 		x[i].className = x[i].className.replace(' active', '');
@@ -302,16 +302,16 @@ function fixStepIndicator(n) {
 
 function calcResult() {
 	// calculates result
-	var ca = 0; // correct answer - currently ZerO..
-	for (var i = 0; i < totQ.length; i++) {
+	let ca = 0; // correct answer - currently ZerO..
+	for (let i = 0; i < totQ.length; i++) {
 		// loop till total num of questions
-		var a = queDoneArr[i]; // getting done questions from array
+		let a = queDoneArr[i]; // getting done questions from array
 		if (userAns[i] == totQ[a].answer) {
 			// if user's answer matches with array's question's answer
 			ca = ca + 1; // increase correct answers' counter
 		}
 	}
-	var percentage = (ca / totQ.length) * 100; // calculates %
+	let percentage = (ca / totQ.length) * 100; // calculates %
 	// alert('Correct Answers: ' + ca + '\n' + 'Your Percentage is: ' + percentage);
 	showResult(percentage, ca);
 }
@@ -319,11 +319,11 @@ function calcResult() {
 /*-----------------------------------*\
 $ The Result Part...
 \*-----------------------------------*/
-var resultCircle = document.getElementById('resultCircle');
-var resultFb = document.getElementById('resultFb');
-var correctAns = document.getElementById('correctAns');
-var quizCompleted = false;
-var RColor;
+let resultCircle = document.getElementById('resultCircle');
+let resultFb = document.getElementById('resultFb');
+let correctAns = document.getElementById('correctAns');
+let quizCompleted = false;
+let RColor;
 function showResult(percentage, ca) {
 	if (percentage == 100) {
 		RColor = 'teal';
@@ -351,7 +351,7 @@ function showResult(percentage, ca) {
 	localStorage.setItem('ca', ca);
 	quizCompleted = true;
 
-	var path =
+	let path =
 		'<svg viewbox="0 0 36 36" class="circular-chart ' +
 		RColor +
 		'"> \
